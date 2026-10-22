@@ -1,6 +1,7 @@
 // app/index.tsx — agrega al archivo existente
-import { useState, ReactNode } from 'react'
-import { Modal, Pressable } from 'react-native'
+import { useState } from 'react'
+import { Modal, Pressable, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 // ─── Paso 5 — Modal de confirmación ──────────────────────────────────
 
