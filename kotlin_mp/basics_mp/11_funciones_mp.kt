@@ -1,20 +1,20 @@
-fun activarPortal() {
-    println("Activando portal interdimensional")
+fun abrirInscripcion() {
+    println("Abriendo inscripcion al curso de idiomas")
     println("Conteo regresivo")
     println("3")
     println("2")
     println("1")
-    println("Mateo Ortega activó el Portal")
+    println("Mateo Ortega abrio la inscripcion")
 }
 
-fun viajar(dimension: String, viajes: Int, consumo: Int) {
-    println("Viajando a $dimension")
+fun inscribir(idioma: String, modulos: Int, horasPorModulo: Int) {
+    println("Inscribiendo al curso de $idioma")
 
-    val total = viajes * consumo
-    println("consumo total: $total")
+    val total = modulos * horasPorModulo
+    println("Horas totales: $total")
 }
 
-fun calcularPrecio(precio: Double): Double {
+fun calcularDescuento(precio: Double): Double {
     var descuento: Double = 0.0
     if (precio >= 100) {
         descuento = precio * 0.15
@@ -22,24 +22,25 @@ fun calcularPrecio(precio: Double): Double {
     return descuento
 }
 
-fun calcularEnergiaTotal (energia: Array<Int>): Int {
-var total = 0
-    for (energia in energia) {
-        total += energia
-        if (energia >= 100) {
-            println("Sobre Energia $energia")
+fun calcularHorasTotales(horas: Array<Int>): Int {
+    var total = 0
+    for (h in horas) {
+        total += h
+        if (h >= 100) {
+            println("Modulo con carga alta: $h horas")
         }
     }
     return total
 }
 
 fun main() {
-    activarPortal()
-    activarPortal()
-    viajar("Tierra", 5, 4)
-    viajar("Marte", 4, 7)
-    val descuentoCliente = calcularPrecio(123.5)
-    println("El cliente Ortega Mateo tiene este descuento : $descuentoCliente")
-    val totalEnergias = arrayOf(20, 50, 80, 100, 60)
-    println("Energía total $totalEnergias")
+    abrirInscripcion()
+    abrirInscripcion()
+    inscribir("Ingles", 5, 4)
+    inscribir("Frances", 4, 7)
+    val descuentoCliente = calcularDescuento(123.5)
+    println("El estudiante Ortega Mateo tiene este descuento: $descuentoCliente")
+    val horasPorModulo = arrayOf(20, 50, 80, 100, 60)
+    val totalHoras = calcularHorasTotales(horasPorModulo)
+    println("Horas totales del curso: $totalHoras")
 }

@@ -1,17 +1,28 @@
 fun main(){
-    println("Expedicion interdimensional")
-    println("¿nombre del viajero?")
+    println("Inscripcion al curso de idiomas")
+
+    println("¿Nombre del estudiante?")
+
     val nombre = readLine()
-    println("Cantidad de portales:")
-    val portales = readLine()!!.toInt()
-    println("Costo por portal:")
+
+    println("Cantidad de cursos:")
+
+    val cursos = readLine()!!.toInt()
+
+    println("Costo por curso:")
+
     val costo = readLine()!!.toDouble()
-    println("Creditos disponibles:")
-    val creditos = readLine()!!.toDouble()
-    val costoTotal = portales * costo
-    val saldo = creditos - costoTotal
+
+    println("Presupuesto disponible:")
+
+    val presupuesto = readLine()!!.toDouble()
+
+    val costoTotal = cursos * costo
+
+    val saldo = presupuesto - costoTotal
+    
     println("Reporte")
-    println("Viajero: $nombre")
+    println("Estudiante: $nombre")
     println("Costo total: $costoTotal")
     println("Saldo: $saldo")
 }

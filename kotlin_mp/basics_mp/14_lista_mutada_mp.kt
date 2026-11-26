@@ -1,47 +1,58 @@
 fun main() {
-    val portales = mutableListOf<String>()
+    val cursos = mutableListOf<String>()
     var opcion = 0
-    
+
     do {
-        println("1. Agregar Portal")
-        println("2. Mostrar Portales")
-        println("3. Modificar Portal")
-        println("4. Eliminar Portal")
+        println("1. Agregar curso")
+        println("2. Mostrar cursos")
+        println("3. Modificar curso")
+        println("4. Eliminar curso")
         println("5. Salir")
-        
+
         opcion = readLine()!!.toInt()
-        
+
         when (opcion) {
             1 -> {
-                println("Ingrese el nombre del portal:")
+                println("Ingrese el nombre del curso:")
                 val nombre = readLine()!!
-                portales.add(nombre)
-                println("Portal incluido")
+                cursos.add(nombre)
+                println("Curso agregado")
             }
             2 -> {
-                println("Portales:")
-                for (portal in portales) {
-                    println("Portal: $portal")
+                println("Cursos:")
+                for (curso in cursos) {
+                    println("Curso: $curso")
                 }
             }
             3 -> {
                 println("Actualizar")
                 println("Indice a modificar:")
                 val indice = readLine()!!.toInt()
-                if (indice in portales.indices) {
+                if (indice in cursos.indices) {
                     println("Nuevo nombre:")
                     val nuevoNombre = readLine()!!
-                    portales[indice] = nuevoNombre
-                    println("Portal Actualizado")
+                    cursos[indice] = nuevoNombre
+                    println("Curso actualizado")
                 } else {
-                    println("Índice inválido")
+                    println("Indice invalido")
                 }
             }
             4 -> {
-                // Opción para eliminar portal (se extiende según la estructura del menú)
+                println("Eliminar")
+                println("Indice a eliminar:")
+                val indice = readLine()!!.toInt()
+                if (indice in cursos.indices) {
+                    cursos.removeAt(indice)
+                    println("Curso eliminado")
+                } else {
+                    println("Indice invalido")
+                }
             }
             5 -> {
                 println("Saliendo...")
+            }
+            else -> {
+                println("Opcion no valida")
             }
         }
     } while (opcion != 5)

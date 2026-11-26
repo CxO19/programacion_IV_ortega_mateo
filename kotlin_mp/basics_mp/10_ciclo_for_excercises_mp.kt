@@ -1,63 +1,63 @@
-data class Portal (
+data class Curso (
     val nombre: String,
-    val energia: Int
+    val estudiantes: Int
 )
 
 fun main(){
-    var presupuestoTotal =0.0
-    println("Presupuesto de Expedicion")
-    for (viaje in 1..6){
+    var presupuestoTotal = 0.0
+    println("Presupuesto de Cursos de Idiomas")
+    for (modulo in 1..6){
 
-        val costoOriginal = viaje * 25
+        val costoOriginal = modulo * 25
         var descuento = 0.0
 
-        if (costoOriginal>=100){
+        if (costoOriginal >= 100){
             descuento = costoOriginal * 0.20
         }
 
         val costoFinal = costoOriginal - descuento
-        println("Viaje $viaje")
+        println("Modulo $modulo")
         println("Costo original: $costoOriginal")
         println("Descuento aplicado: $descuento")
         println("Costo final: $costoFinal")
         presupuestoTotal += costoFinal
     }
 
-    println("Presupuesto total de la expedicion %1f creditos".format(presupuestoTotal))
+    println("Presupuesto total de los modulos: %.1f dolares".format(presupuestoTotal))
 
-    val portales = arrayOf(
-        Portal("Tierra", 30),
-        Portal("Marte", 65),
-        Portal("Saturno", 95),
-        Portal("Jupiter", 130),
-        Portal("Neptuno", 45),
-        Portal("Mateo", 89),
-        Portal("Carrera", 75)
+    val cursos = arrayOf(
+        Curso("Ingles", 30),
+        Curso("Frances", 65),
+        Curso("Aleman", 95),
+        Curso("Italiano", 130),
+        Curso("Portugues", 45),
+        Curso("Japones", 89),
+        Curso("Chino", 75)
     )
 
-    val costoViaje = 50;
-    for (portal in portales){
-        println("Portal: ${portal.nombre}")
-        println("Energia: ${portal.energia}")
+    val minimoEstudiantes = 50
+    for (curso in cursos){
+        println("Curso: ${curso.nombre}")
+        println("Estudiantes inscritos: ${curso.estudiantes}")
         when {
-            portal.energia < 50 -> {
-                println ("Estado: INACTIVO")
-                println ("No se puede realizar el viaje")
+            curso.estudiantes < 50 -> {
+                println("Estado: CANCELADO")
+                println("No se puede abrir el curso")
             }
-            portal.energia < 80 -> {
-                println ("Estado: OPERATIVO")
+            curso.estudiantes < 80 -> {
+                println("Estado: ACTIVO")
             }
-            portal.energia < 120 -> {
-                println ("Estado: ESTABLE")
+            curso.estudiantes < 120 -> {
+                println("Estado: ESTABLE")
             }
             else -> {
-                println ("Estado: ALTA CAPACIDAD")
+                println("Estado: LISTA DE ESPERA")
             }
         }
-        if (portal.energia >= costoViaje) {
-            val restante = portal.energia - costoViaje
-            println ("Viaje Autorizado")
-            println ("Energia restante: $restante")
+        if (curso.estudiantes >= minimoEstudiantes) {
+            val excedente = curso.estudiantes - minimoEstudiantes
+            println("Curso autorizado")
+            println("Estudiantes sobre el minimo: $excedente")
         }
     }
 }

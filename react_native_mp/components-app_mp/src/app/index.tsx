@@ -4,7 +4,6 @@ import { Paso1 } from './paso1_mp'
 import { Paso2 } from './paso2_mp'
 import { Paso3 } from './paso3_mp'
 import { Paso4 } from './paso4_mp'
-import { Paso5 } from './paso5_mp'
 import { Paso6 } from './paso6_mp'
 import { Paso1_Simpson } from './paso1_simpson_mp'
 
@@ -13,11 +12,9 @@ import { Paso1_Simpson } from './paso1_simpson_mp'
 // │  1  Paso 1  Props tipadas — TarjetaServidor                     │
 // │  2  Paso 2  children y composición — Card reutilizable          │
 // │  3  Paso 3  Props opcionales y BadgeEstado                      │
-// │  4  Paso 4  ScrollView y SafeAreaView                           │
-// │  5  Paso 5  Modal de confirmación                               │
-// │  6  Paso 6  Pantalla completa — detalle de servidor             │
+// │  4  Paso 4  ScrollView y SafeAreaView                           │                     
 // └──────────────────────────────────────────────────────────────────┘
-const PASO = 7
+const PASO = 4
 
 export default function Index() {
   switch (PASO) {
@@ -29,12 +26,6 @@ export default function Index() {
       return <Paso3 />
     case 4:
       return <Paso4 />
-    case 5:
-      return <Paso5 />
-    case 6:
-      return <Paso6 />
-    case 7:
-      return <Paso1_Simpson />
     default:
       return (
         <View style={styles.centrado}>

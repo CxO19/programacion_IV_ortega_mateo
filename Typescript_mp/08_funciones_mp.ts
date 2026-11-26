@@ -63,7 +63,7 @@ function formatearRespuesta(valor: boolean): string;
 
 function formatearRespuesta(valor: number | string | boolean): string {
     if (typeof valor === "number") {
-        return valor.toLocaleString("es.MX", { minimumFractionDigits: 2 });
+        return valor.toLocaleString("es-MX", { minimumFractionDigits: 2 });
     }
     if (typeof valor === "boolean") {
         return valor ? "si" : "no";
