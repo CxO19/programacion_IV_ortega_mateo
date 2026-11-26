@@ -1,3 +1,3 @@
 fun main(){
-    print ("Rick y Morty estan listos")
+    println ("Rick y Morty estan listos")
 }
