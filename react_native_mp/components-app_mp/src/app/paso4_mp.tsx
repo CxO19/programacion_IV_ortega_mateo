@@ -1,7 +1,6 @@
-// app/index.tsx — agrega al archivo existente
-import { useState, ReactNode } from 'react'
-import { Modal, Pressable, SafeAreaView } from 'react-native'
-import { StyleSheet, Text, View } from 'react-native'
+import { useState } from 'react'
+import { Modal, Pressable, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 // ─── Paso 5 — Modal de confirmación ──────────────────────────────────
 
@@ -55,7 +54,7 @@ export function ModalConfirm({
   )
 }
 
-export function Paso5() {
+export function Paso4() {
   const [modalVisible, setModalVisible] = useState(false)
   const [accionEjecutada, setAccionEjecutada] = useState<string | null>(null)
 
@@ -89,13 +88,17 @@ export function Paso5() {
         etiquetaConfirmar="Reiniciar"
         onConfirmar={() => {
           setModalVisible(false)
-          setAccionEjecutada('Reinicio de progreso aplicado a las ' + new Date().toLocaleTimeString())
+          setAccionEjecutada(
+            'Reinicio de progreso aplicado a las ' + new Date().toLocaleTimeString()
+          )
         }}
         onCancelar={() => setModalVisible(false)}
       />
     </SafeAreaView>
   )
 }
+
+export default Paso4
 
 const estilos5 = StyleSheet.create({
   safeArea: {

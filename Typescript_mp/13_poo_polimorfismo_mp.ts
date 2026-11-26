@@ -20,4 +20,4 @@ const estudiantes: Estudiante[] = [
     new Mateo(),
     new Sofia()
 ]
-estudiantes.forEach(estudiante=>estudiante.estudiar)
+estudiantes.forEach(estudiante=>estudiante.estudiar())

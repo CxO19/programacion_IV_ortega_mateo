@@ -1,36 +1,36 @@
 fun main(){
     println("Condicional If")
     println("Condicional simple o un camino")
-    var energia = 80
-    if (energia>= 50){
-        println("Mateo puede abrir el portal")
+    var puntaje = 80
+    if (puntaje >= 50){
+        println("Mateo puede inscribirse al nivel intermedio")
     }
 
     println("Condicional if-else dos caminos")
-    energia = 30
-    if (energia>= 50){
-        println("Mateo puede abrit el portal")
+    puntaje = 30
+    if (puntaje >= 50){
+        println("Mateo puede inscribirse al nivel intermedio")
     } else {
-        println("energia insuficiente")
+        println("Puntaje insuficiente, debe repetir el nivel basico")
     }
 
     println("Condicional multiple")
-    energia = 70
-    if (energia>= 100){
-        println("Mateo puede abrit el portal")
-    } else if (energia >= 50) {
-        println("energia suficiente")
+    puntaje = 70
+    if (puntaje >= 100){
+        println("Mateo puede inscribirse al nivel avanzado")
+    } else if (puntaje >= 50) {
+        println("Puntaje suficiente para el nivel intermedio")
     } else {
-        println("Energia insuficiente")
+        println("Puntaje insuficiente")
     }
 
-    println("Condicional multiple")
-    energia = 70
-    val motorActivo = true
-    if (energia>=70){
-        println("Rick puede abrir el portal")
-        if (motorActivo){
-            println("el motor anda activo papi")
+    println("Condicional anidado")
+    puntaje = 70
+    val pagoRealizado = true
+    if (puntaje >= 70){
+        println("Mateo puede inscribirse al curso de ingles")
+        if (pagoRealizado){
+            println("El pago esta confirmado, inscripcion completa")
         }
     }
 }

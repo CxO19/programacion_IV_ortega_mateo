@@ -1,64 +1,63 @@
-data class PistolaPortal(
-    val energia: Int,
-    val activa: Boolean
+data class Examen(
+    val puntaje: Int,
+    val inscrito: Boolean
 )
 
-data class Robot(
+data class Estudiante(
     val nombre: String,
-    val bateria: Int
+    val asistencia: Int
 )
 
-data class NaveEspacial(
-    val energia: Int,
-    val motorActivo: Boolean,
-    val autorizacion: Boolean
+data class Matricula(
+    val puntaje: Int,
+    val pagoRealizado: Boolean,
+    val documentos: Boolean
 )
+
 fun main(){
-    val pistola = PistolaPortal(80, true)
-    if(pistola.energia >= 50 && pistola.activa){
-        println("Rick puede abrir el portal")
+    val examen = Examen(80, true)
+    if(examen.puntaje >= 50 && examen.inscrito){
+        println("Mateo puede pasar al nivel intermedio")
     }
 
-    val radiacion = arrayOf(20,45,85,30,60)
-    if (radiacion[2]>70){
-        print("Peligro! Dimension con alta radiacion")
+    val notasOrales = arrayOf(20,45,85,30,60)
+    if (notasOrales[2] > 70){
+        println("Excelente nota en el examen oral")
     }else{
-        print("Radiacion Moderada")
+        println("Nota oral moderada")
     }
 
-    val pruebas = arrayOf(80,65,90)
-    val suma = pruebas[0]+pruebas[1]+pruebas[2]
-    val promedio = suma /3.0
+    val quizzes = arrayOf(80,65,90)
+    val suma = quizzes[0]+quizzes[1]+quizzes[2]
+    val promedio = suma / 3.0
     if (promedio >= 70){
-        println("Portal Estable")
+        println("Curso aprobado")
     }else{
-        println("Portal Inestable")
+        println("Curso reprobado")
     }
 
+    val estudiante = Estudiante("Mateo", 65)
 
-    val robot = Robot("Robot ayudante", 65)
-    
-    if (robot.bateria >=80){
-        println("Funcionamiento optimo")
-    }else if(robot.bateria >=50){
-        println("Funcionamiento Normal")
-    }else if(robot.bateria >=20){
-        println("Funcionamiento Bajo")
+    if (estudiante.asistencia >= 80){
+        println("Asistencia excelente")
+    }else if(estudiante.asistencia >= 50){
+        println("Asistencia regular")
+    }else if(estudiante.asistencia >= 20){
+        println("Asistencia baja")
     }else{
-        println("Estado critico")
+        println("Riesgo de perder el curso")
     }
 
-
-    val nave = NaveEspacial(120,true,false)
-    if (nave.energia >=100){
-        if(nave.motorActivo){
-            if(nave.autorizacion){
-                println("Viaje Autorizado")
+    val matricula = Matricula(120, true, false)
+    if (matricula.puntaje >= 100){
+        if(matricula.pagoRealizado){
+            if(matricula.documentos){
+                println("Matricula completa")
             } else {
-                print("Morty no tiene autorizacion")
+                println("Faltan documentos para completar la matricula")
             }
         }
     }else {
-        print("Energia Insuficiente")
+        println("Puntaje insuficiente para el nivel avanzado")
     }
 }
